@@ -1,0 +1,10 @@
+public class SobjectController
+{
+    @AuraEnabled
+    public static List<sObject> getsObject(String objName)
+    {
+        String str = 'Select Id,Name from '+objName;
+        List<sObject> results = Database.query(str);
+        return results;
+    }
+}
